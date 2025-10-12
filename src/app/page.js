@@ -48,21 +48,21 @@ export default function MinimalLandingPage() {
             <h3>Real-Time Analytics</h3>
             <p>
               Instantly view key metrics: Population trends, Pollution levels,
-              Food reserves, and citizen happiness.
+              Food reserves, and Fuel reserves.
             </p>
           </div>
           <div className={styles.featureItem}>
             <h3>Complex Simulation Engine</h3>
             <p>
               Our engine models realistic interactions, leading to emergent
-              challenges like traffic, pandemics, or a food crisis.
+              challenges like traffic, acute pollution or a food crisis.
             </p>
           </div>
         </section>
 
         <footer className={styles.footer}>
           <p>
-            &copy; {new Date().getFullYear()} Simuopolis Games. All rights
+            &copy; {new Date().getFullYear()} Parabola Games. All rights
             reserved.
           </p>
         </footer>
