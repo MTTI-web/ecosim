@@ -36,10 +36,8 @@ export default function SignUpForm() {
   return (
     <section className={styles.container}>
       <div className={styles.formContainer}>
-        <h2 className={styles.title}>Create Your Account</h2>
-        <p className={styles.subtitle}>
-          Join ProductX today and simplify your workflow.
-        </p>
+        <h2 className={styles.title}>Login</h2>
+        <p className={styles.subtitle}>Welcome back!</p>
         <p className={styles.subtitle}>{loading ? 'Loading...' : ''}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
