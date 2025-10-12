@@ -34,9 +34,9 @@ const ProjectCard = ({ project }) => {
           {formatLastOpened(project.createdAt)}
         </span>
       </div>
-      <button className={styles.projectMenuBtn}>
+      {/* <button className={styles.projectMenuBtn}>
         <span aria-hidden="true">&#x22EE;</span>
-      </button>
+      </button> */}
     </div>
   );
 };
@@ -50,9 +50,11 @@ export default function Home() {
   useEffect(() => {
     if (!projects) {
       const func = async () => {
+        setloading(true);
         const res = await fetchAPI({ url: '/project/get_all', method: 'get' });
         console.log('user projects', res);
         setProjects(res.projects);
+        setloading(false);
       };
       func();
     }
@@ -61,9 +63,7 @@ export default function Home() {
   return (
     // APPLYING CSS MODULES to the main structure classes
     <section className={styles.projectsCatalogueContainer}>
-      <div className={styles.welcomeText}>
-        Welcome back, {user?.name || 'User'}!
-      </div>
+      <div className={styles.welcomeText}>Welcome, {user?.name || 'User'}!</div>
 
       {projects && (
         <>

@@ -8,8 +8,7 @@ import { useUnity } from '@/hooks/useUnity'; // Adjust path as needed
 
 export default function SignUpForm() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const { setUser } = useUnity();
+  const { setUser, loading, setloading } = useUnity();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,6 +18,7 @@ export default function SignUpForm() {
       email: form.email.value,
       password: form.password.value,
     };
+    setloading(true);
     console.log('User data', userData);
     const res = await fetchAPI({
       url: '/auth/login',
@@ -30,7 +30,7 @@ export default function SignUpForm() {
       setUser(res.user);
       router.replace('/home');
     }
-    setLoading(false);
+    setloading(false);
   };
 
   return (
@@ -38,7 +38,6 @@ export default function SignUpForm() {
       <div className={styles.formContainer}>
         <h2 className={styles.title}>Login</h2>
         <p className={styles.subtitle}>Welcome back!</p>
-        <p className={styles.subtitle}>{loading ? 'Loading...' : ''}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>

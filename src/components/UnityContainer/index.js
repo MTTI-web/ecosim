@@ -50,119 +50,139 @@ export function UnityContainer() {
       </div>
       <div className={styles.unityStatsAndCanvas}>
         {stats && (
-          <div className={styles.statsBar}>
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.fps > 40
-                      ? styles.statSanityHigh
-                      : stats.fps > 20
-                      ? styles.statSanityMed
-                      : styles.statSanityLow
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>FPS</div>
-                <div className={styles.statValue} id="fpsValue">
-                  {stats?.fps || '--'}
+          <>
+            <div className={styles.statsBar}>
+              <div className={styles.stats}>
+                <div className={styles.stat}>
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.fps > 40
+                        ? styles.statSanityHigh
+                        : stats.fps > 20
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>FPS</div>
+                  <div className={styles.statValue} id="fpsValue">
+                    {stats?.fps || '--'}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat}>
-                <div
-                  className={`${styles.statSanity} ${styles.statSanityNeutral}`}
-                ></div>
-                <div className={styles.statLabel}>Time</div>
-                <div className={styles.statValue} id="time">
-                  {formatNumber(stats?.Count / 1000)}Y
+                <div className={styles.stat}>
+                  <div
+                    className={`${styles.statSanity} ${styles.statSanityNeutral}`}
+                  ></div>
+                  <div className={styles.statLabel}>Time</div>
+                  <div className={styles.statValue} id="time">
+                    {formatNumber(stats?.Count / 1000)}Y
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '130px' }}>
-                <div
-                  className={`${styles.statSanity} ${styles.statSanityMed}`}
-                ></div>
-                <div className={styles.statLabel}>Population</div>
-                <div className={styles.statValue} id="populationValue">
-                  {formatNumber(stats?.PeopleCount)}
+                <div className={styles.stat} style={{ width: '130px' }}>
+                  <div
+                    className={`${styles.statSanity} ${styles.statSanityMed}`}
+                  ></div>
+                  <div className={styles.statLabel}>Population</div>
+                  <div className={styles.statValue} id="populationValue">
+                    {formatNumber(
+                      stats?.PeopleCount > 0 ? stats?.PeopleCount : 0
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '125px' }}>
-                {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.Electricity - stats.PeopleCount > 200000
-                      ? styles.statSanityHigh
-                      : stats.Electricity - stats.PeopleCount > 0
-                      ? styles.statSanityMed
-                      : styles.statSanityLow
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>Electricity</div>
-                <div className={styles.statValue} id="electricity">
-                  {formatNumber(stats?.Electricity)}
+                <div className={styles.stat} style={{ width: '125px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.Electricity - stats.PeopleCount > 200000
+                        ? styles.statSanityHigh
+                        : stats.Electricity - stats.PeopleCount > 0
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Electricity</div>
+                  <div className={styles.statValue} id="electricity">
+                    {formatNumber(stats?.Electricity)}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '90px' }}>
-                {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.Coal - stats.PeopleCount > 200000
-                      ? styles.statSanityHigh
-                      : stats.Coal - stats.PeopleCount > 0
-                      ? styles.statSanityMed
-                      : styles.statSanityLow
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>Coal</div>
-                <div className={styles.statValue} id="coal">
-                  {formatNumber(stats?.Coal)}
+                <div className={styles.stat} style={{ width: '120px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.polution > 15000
+                        ? styles.statSanityLow
+                        : stats.Food - stats.PeopleCount > 10000
+                        ? styles.statSanityMed
+                        : styles.statSanityHigh
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Pollution</div>
+                  <div className={styles.statValue} id="Pollution">
+                    {formatNumber(stats?.polution)}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '120px' }}>
-                {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.polution > 15000
-                      ? styles.statSanityLow
-                      : stats.Food - stats.PeopleCount > 10000
-                      ? styles.statSanityMed
-                      : styles.statSanityHigh
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>Pollution</div>
-                <div className={styles.statValue} id="Pollution">
-                  {formatNumber(stats?.polution)}
+                <div className={styles.stat} style={{ width: '110px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.Food - stats.PeopleCount > 200000
+                        ? styles.statSanityHigh
+                        : stats.Food - stats.PeopleCount > 0
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Food</div>
+                  <div className={styles.statValue} id="Food">
+                    {formatNumber(stats?.Food)}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '110px' }}>
-                {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.Food - stats.PeopleCount > 200000
-                      ? styles.statSanityHigh
-                      : stats.Food - stats.PeopleCount > 0
-                      ? styles.statSanityMed
-                      : styles.statSanityLow
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>Food</div>
-                <div className={styles.statValue} id="Food">
-                  {formatNumber(stats?.Food)}
+                <div className={styles.stat} style={{ width: '120px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.Petrol - stats.PeopleCount > 2000000
+                        ? styles.statSanityHigh
+                        : stats.Petrol - stats.PeopleCount > 0
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Petrol</div>
+                  <div className={styles.statValue} id="Petrol">
+                    {formatNumber(stats?.Petrol > 0 ? stats?.Petrol : 0)}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stat} style={{ width: '120px' }}>
-                {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
-                <div
-                  className={`${styles.statSanity} ${
-                    stats.Money - stats.PeopleCount > 2000000
-                      ? styles.statSanityHigh
-                      : stats.Money - stats.PeopleCount > 0
-                      ? styles.statSanityMed
-                      : styles.statSanityLow
-                  }`}
-                ></div>
-                <div className={styles.statLabel}>Petrol</div>
-                <div className={styles.statValue} id="Petrol">
-                  {formatNumber(stats?.Petrol > 0 ? stats?.Petrol : 0)}
+                <div className={styles.stat} style={{ width: '100px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.Coal - stats.PeopleCount > 200000
+                        ? styles.statSanityHigh
+                        : stats.Coal - stats.PeopleCount > 0
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Coal</div>
+                  <div className={styles.statValue} id="Money">
+                    {formatNumber(stats?.Coal)}
+                  </div>
+                </div>
+                <div className={styles.stat} style={{ width: '100px' }}>
+                  {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
+                  <div
+                    className={`${styles.statSanity} ${
+                      stats.Money - stats.PeopleCount > 200000
+                        ? styles.statSanityHigh
+                        : stats.Money - stats.PeopleCount > 0
+                        ? styles.statSanityMed
+                        : styles.statSanityLow
+                    }`}
+                  ></div>
+                  <div className={styles.statLabel}>Money</div>
+                  <div className={styles.statValue} id="coal">
+                    {formatNumber(stats?.Money)}
+                  </div>
                 </div>
               </div>
             </div>
@@ -282,7 +302,7 @@ export function UnityContainer() {
                       const stringed = JSON.stringify(StartData);
                       sendMessage('Canvas', 'SetInitialData', stringed);
                     }
-                    return !playing;
+                    return !prev;
                   });
                 }}
               >
@@ -291,12 +311,12 @@ export function UnityContainer() {
                     stroke="currentColor"
                     fill="currentColor"
                     strokeWidth="0"
-                    viewBox="0 0 448 512"
+                    viewBox="0 0 512 512"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"></path>
+                    <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm96 328c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h160c8.8 0 16 7.2 16 16v160z"></path>
                   </svg>
                 ) : (
                   <svg
@@ -332,7 +352,7 @@ export function UnityContainer() {
                 </svg>
               </button>
             </div>
-          </div>
+          </>
         )}
 
         <Unity

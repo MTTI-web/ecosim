@@ -181,13 +181,7 @@ export default function UnityPage({ params }) {
           {playing !== null && (
             <form id="initial-stats-form">
               <div className={styles.category}>
-                <h2
-                  onClick={() => {
-                    sendMessage('Canvas', 'GetMapCompressed');
-                  }}
-                >
-                  Fossil Fuels
-                </h2>
+                <h2>Fossil Fuels</h2>
                 <div className={styles.inputGroup}>
                   <label htmlFor="coal">Coal</label>
                   <FormInput
@@ -218,7 +212,7 @@ export default function UnityPage({ params }) {
                     disabled={playing}
                     type="number"
                     id="PeopleCount"
-                    defaultValue="1000000"
+                    defaultValue="30000"
                   />
                 </div>
                 <div className={styles.inputGroup}>
@@ -244,7 +238,7 @@ export default function UnityPage({ params }) {
                   />
                 </div>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="BirthRate">Birth rate</label>
+                  <label htmlFor="BirthRate">Birth rate (0-1%)</label>
                   <FormInput
                     disabled={playing}
                     type="range"
@@ -255,7 +249,7 @@ export default function UnityPage({ params }) {
                   />
                 </div>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="DeathRate">Death rate</label>
+                  <label htmlFor="DeathRate">Death rate (0-1%)</label>
                   <FormInput
                     disabled={playing}
                     type="range"

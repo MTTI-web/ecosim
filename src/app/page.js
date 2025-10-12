@@ -21,8 +21,8 @@ export default function MinimalLandingPage() {
             Observe the Results.
           </h1>
           <p className={styles.heroSubtitle}>
-            EcoSim is the ultimate city simulator where every decision, from tax
-            rate to energy policy.
+            EcoSim is the ultimate city simulator where you make the decisions
+            and you see the consequences.
           </p>
           <Link href="/project/new" className={styles.ctaButton}>
             Start a new project

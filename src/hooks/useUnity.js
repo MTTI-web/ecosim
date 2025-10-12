@@ -50,11 +50,6 @@ export function UnityProvider({ children }) {
     [sendMessage]
   );
 
-  const mapcompress = useCallback(() => {
-    console.log('asking for map');
-    sendMessage('Canvas', 'GetMapCompressed');
-  }, [sendMessage]);
-
   // 4. ✅ STABLE: FPS Setter wrapped in useCallback.
   const setFPS = useCallback(
     (fps) =>
@@ -149,11 +144,11 @@ export function UnityProvider({ children }) {
     }
   }, [playing, sendMessage, isLoaded, runPlay]);
 
-  useEffect(() => {
-    if (!isLoaded) {
-      sendMessage('Canvas', 'GetMapCompressed');
-    }
-  }, [sendMessage, isLoaded]);
+  // useEffect(() => {
+  //   if (!isLoaded) {
+  //     sendMessage('Canvas', 'GetMapCompressed');
+  //   }
+  // }, [sendMessage, isLoaded]);
 
   useEffect(() => {
     const func = async () => {
