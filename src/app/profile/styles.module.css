@@ -1,0 +1,156 @@
+/* General styling based on the reference image */
+.container {
+  min-height: 100vh;
+  background-color: #1a1a1a; /* Dark background similar to the reference */
+  color: #e0e0e0; /* Light text for contrast */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content Styling */
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+/* Profile Card Styling */
+.profileCard {
+  background-color: #222; /* Darker card background */
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.profilePhotoContainer {
+  margin-bottom: 2rem;
+}
+
+.profilePhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Make it round */
+  object-fit: cover;
+}
+
+.profileInfo {
+  width: 100%;
+  text-align: left;
+}
+
+.infoLabel {
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.infoValue {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333; /* Subtle separator */
+}
+
+.infoValue:last-of-type {
+  border-bottom: none; /* No border for the last item */
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #222;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Base Button Styling */
+.logoutButton {
+  /* Box Model & Layout */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+  /* Typography */
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5; /* Ensures text is vertically centered */
+
+  /* Color Scheme (Warning/Exit Color) */
+  background-color: #dc3545; /* Bootstrap Red (Danger) */
+  color: #ffffff; /* White text for contrast */
+}
+
+/* Hover State */
+.logoutButton:hover {
+  background-color: #c82333; /* Darker red on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Active/Click State */
+.logoutButton:active {
+  background-color: #bd2130; /* Even darker red when clicked */
+  transform: translateY(1px); /* Slight press effect */
+}
+
+/* Focus State (for accessibility) */
+.logoutButton:focus {
+  outline: 2px solid #bd2130; /* Clear focus ring */
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .profileCard {
+    padding: 1.5rem;
+  }
+
+  .profilePhoto {
+    width: 100px;
+    height: 100px;
+  }
+}

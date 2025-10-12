@@ -1,0 +1,164 @@
+.container {
+  padding-top: 10px;
+}
+
+/* Overall Container for the form */
+.formContainer {
+  max-width: 450px; /* Keep the form reasonably narrow */
+  margin: 50px auto; /* Center the form on the page */
+  padding: 40px;
+  background-color: #2a2a2a; /* Card-like background, slightly lighter than page */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Prominent dark shadow */
+  text-align: center;
+  color: #e0e0e0; /* Light text */
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #f0f0f0; /* Bright title */
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-bottom: 40px;
+}
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form groups */
+}
+
+.formGroup {
+  text-align: left; /* Align labels and inputs */
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b0b0b0; /* Muted label color */
+}
+
+.input {
+  width: 100%; /* Full width minus padding */
+  padding: 12px;
+  border: 1px solid #444; /* Darker border */
+  border-radius: 6px;
+  background-color: #383838; /* Input background */
+  color: #f0f0f0; /* Input text color */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input::placeholder {
+  color: #777; /* Placeholder color */
+}
+
+.input:focus {
+  border-color: #00bcd4; /* Accent color on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3); /* Subtle glow on focus */
+}
+
+/* Checkbox specific styling */
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.checkbox {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #00bcd4;
+  background-color: #383838;
+  appearance: none; /* Hide default checkbox */
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+.checkbox:checked {
+  background-color: #00bcd4; /* Accent when checked */
+  border-color: #00bcd4;
+}
+
+.checkbox:checked::before {
+  content: '✓'; /* Checkmark symbol */
+  color: #1a1a1a; /* Dark text for checkmark */
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkboxLabel {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.termsLink {
+  color: #00bcd4; /* Accent color for links */
+  text-decoration: none;
+  transition: text-decoration 0.3s;
+}
+
+.termsLink:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #00bcd4; /* Accent color */
+  color: #1a1a1a; /* Dark text on bright button */
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4); /* Glow effect */
+}
+
+.submitButton:hover {
+  background-color: #00acc1; /* Slightly darker accent on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+}
+
+/* Login Prompt */
+.loginPrompt {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+}
+
+.loginLink {
+  color: #00bcd4; /* Accent color for login link */
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.3s;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}

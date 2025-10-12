@@ -1,0 +1,142 @@
+/* Full page layout */
+.page {
+  /* width: 100vw;
+  height: 100vh; */
+  /* Use a default background for the rest of the page, e.g., a light gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Main Grid Container for Controls and Unity */
+.mainGrid {
+  width: 100%;
+  height: calc(100vh - 40px); /* Full viewport height */
+  display: grid;
+  /* Define the two columns: 
+     1. Small left column (e.g., 300px wide) 
+     2. Remaining space for the Unity simulation (1fr) */
+  grid-template-columns: 300px 1fr;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures content stays within bounds */
+} /* 1. Overall Control Panel Container */
+.controlPanel {
+  /* Set the main background color to match the deep dark tone */
+  background-color: #222222;
+  color: #ffffff; /* White text for high contrast */
+
+  /* Reset padding to manage spacing via internal components */
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* 2. Page Title (e.g., "My Sim App") - Assuming this is inside .controlPanel or at the top */
+.controlPanel h1 {
+  /* Use a prominent, large, and bold style */
+  font-size: 1.3rem;
+  font-weight: 800; /* Extra bold */
+  padding: 20px 20px 20px 20px; /* Padding for the top title area */
+  margin: 0;
+  color: #ffffff;
+}
+
+/* 3. Category Sections (The Separated Blocks) */
+.category {
+  /* Create the dark separating background */
+  background-color: #333333;
+  border-top: 1px solid #444444; /* Light gray separator line */
+  padding: 20px; /* Padding inside each category block */
+}
+
+/* 4. Category Headings (e.g., "Category 1") */
+.category h2 {
+  font-size: 1.2rem;
+  font-weight: 600; /* Semi-bold */
+  margin: 0 0 20px 0; /* Space below the category title */
+  color: #ffffff;
+}
+
+/* 5. Input Groups (Labels and Fields) - Stacked Layout */
+.inputGroup {
+  /* Reset flex layout from previous request */
+  display: block;
+  margin-bottom: 20px; /* Space between different variables */
+}
+
+.inputGroup label {
+  display: block; /* Label takes full width */
+  margin-bottom: 8px; /* Space between label and input field */
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #cccccc; /* Slightly softer white for the label text */
+}
+
+.inputGroup input::placeholder {
+  color: #ffffff;
+}
+
+/* 6. Input Field Appearance */
+.inputGroup input[type='number'],
+.inputGroup input[type='text'],
+.inputGroup input[type='range'] {
+  width: 100%; /* Important: Makes the input field span the full category width */
+  padding: 9px 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: none;
+  background-color: #555555; /* Dark gray for the input background */
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  background-color: #666666; /* Subtle change on focus */
+}
+
+.controlPanelHeading {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.saveButton {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.saveButton:hover {
+  background-color: #444444;
+}
+
+.saveButton svg {
+  width: 100%;
+  height: 100%;
+}
+
+.projectTitleInput {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.input {
+  font-family: 'Funnel Sans' !important;
+}
+
+.input::placeholder {
+  font-family: 'Funnel Sans' !important;
+}

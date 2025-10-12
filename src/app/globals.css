@@ -19,9 +19,18 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Funnel Sans';
+}
+
+section {
+  margin-top: 65px;
+  animation: 0.2s fadeIn ease-in;
+}
+
+section.unity-page {
+  margin-top: 40px;
 }
 
 * {
@@ -38,5 +47,16 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Optional: Adds a slight upward slide */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

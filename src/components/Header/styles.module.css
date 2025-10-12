@@ -1,0 +1,180 @@
+/* styles/Header.module.css */
+
+/* --- Header Base Styles (Minimalist, Dark Theme) --- */
+.header {
+  /* ... existing .header styles ... */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Fixed height 80px */
+  height: 65px;
+  /* Dark background, light text */
+  background-color: #1a1a1a; /* Very dark background */
+  color: #f0f0f0; /* Off-white text */
+  z-index: 1000;
+  border-bottom: 1px solid #333; /* Subtle border for separation */
+}
+/* ... existing styles for .container, .projectTitle, .nav, etc. ... */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* --- Project Title --- */
+.projectTitle a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff; /* Pure white for the main title */
+  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+}
+/* ... remaining existing styles ... */
+.projectTitle a:hover {
+  color: #00bcd4; /* A cool, bright cyan/aqua as the accent color */
+}
+
+/* --- Navigation --- */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navItem {
+  margin-left: 2rem;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: #cccccc; /* Lighter gray for nav links */
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+
+  /* Underline Hover Effect Setup */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* The magic for the underline hover effect */
+.navItem a::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Starts hidden */
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  border-radius: 1px;
+  background-color: #ffffff; /* Accent color line */
+  transition: width 0.3s ease-out; /* Animates the width change */
+}
+
+.navItem a:hover {
+  color: #ffffff;
+}
+
+.navItem a:hover::after {
+  width: 100%; /* Line appears on hover */
+}
+
+/* ======================================================= */
+/* --- NEW STYLES FOR /unity ROUTE --- */
+/* ======================================================= */
+
+.unityHeader {
+  height: 40px;
+  transition: height 0.3s ease-out; /* Smooth transition */
+}
+
+/* Hide elements other than the navigation */
+.unityHeader .projectTitle {
+  opacity: 0;
+  display: none;
+}
+
+/* Reset margins/paddings for nav links to align neatly to the left */
+.unityHeader .nav {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.unityHeader .navItem:first-child {
+  margin-left: 0; /* Remove margin on the first item */
+}
+
+/* --- Responsiveness (Mobile First) --- */
+
+@media (max-width: 768px) {
+  /* ... existing mobile styles ... */
+  .header {
+    height: auto;
+    min-height: 60px;
+    border-bottom: none;
+  }
+
+  .container {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+
+  /* ... existing mobile styles ... */
+  .projectTitle {
+    margin-bottom: 0.75rem;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav ul {
+    justify-content: space-between;
+  }
+
+  .navItem {
+    margin: 0 0.25rem;
+  }
+
+  .navItem a {
+    font-size: 0.9rem;
+  }
+
+  /* Remove the underline effect on small mobile screens */
+  .navItem a::after {
+    content: none;
+  }
+
+  /* Ensure the small header style is still applied on mobile */
+  .unityHeader {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .unityHeader .container {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+
+  /* Re-hide the project title on mobile if it appears due to media query */
+  .unityHeader .projectTitle {
+    display: none;
+  }
+}
