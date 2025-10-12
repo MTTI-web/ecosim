@@ -22,10 +22,10 @@ export default function MinimalLandingPage() {
           </h1>
           <p className={styles.heroSubtitle}>
             Simuopolis is the ultimate city simulator where every decision, from
-            tax rate to energy policy, shapes your citizens' fate.
+            tax rate to energy policy.
           </p>
           <Link href="/project/new" className={styles.ctaButton}>
-            Start Your City's Era
+            Start a new project
           </Link>
         </section>
 
@@ -33,22 +33,22 @@ export default function MinimalLandingPage() {
           <div className={styles.featureItem}>
             <h3>Deep Control Factors</h3>
             <p>
-              Adjust over 50 variables like **food production**, **tax rates**,
-              and **zoning laws** to control your city's growth.
+              Adjust numerous variables like food production,tax rates, and
+              zoning laws to control the growth of your city.
             </p>
           </div>
           <div className={styles.featureItem}>
             <h3>Real-Time Analytics</h3>
             <p>
-              Instantly view key metrics: **Population trends**, **Pollution
-              levels**, **Food reserves**, and citizen happiness.
+              Instantly view key metrics: Population trends, Pollution levels,
+              Food reserves, and citizen happiness.
             </p>
           </div>
           <div className={styles.featureItem}>
             <h3>Complex Simulation Engine</h3>
             <p>
               Our engine models realistic interactions, leading to emergent
-              challenges like **traffic**, **pandemics**, or a **food crisis**.
+              challenges like traffic, pandemics, or a food crisis.
             </p>
           </div>
         </section>
