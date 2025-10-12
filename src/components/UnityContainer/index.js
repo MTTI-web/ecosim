@@ -76,7 +76,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.Count / 1000)}Y
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '130px' }}>
                 <div
                   className={`${styles.statSanity} ${styles.statSanityMed}`}
                 ></div>
@@ -85,7 +85,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.PeopleCount)}
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '125px' }}>
                 {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
                 <div
                   className={`${styles.statSanity} ${
@@ -101,7 +101,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.Electricity)}
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '90px' }}>
                 {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
                 <div
                   className={`${styles.statSanity} ${
@@ -117,7 +117,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.Coal)}
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '120px' }}>
                 {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
                 <div
                   className={`${styles.statSanity} ${
@@ -133,7 +133,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.polution)}
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '110px' }}>
                 {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
                 <div
                   className={`${styles.statSanity} ${
@@ -149,7 +149,7 @@ export function UnityContainer() {
                   {formatNumber(stats?.Food)}
                 </div>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.stat} style={{ width: '120px' }}>
                 {/* {"PeopleCount":13369,"Food":9059261,"Electricity":8294861,"Petrol":-1116773,"Coal":41719,"polution":13290,"Money":196844826920} */}
                 <div
                   className={`${styles.statSanity} ${
@@ -160,14 +160,18 @@ export function UnityContainer() {
                       : styles.statSanityLow
                   }`}
                 ></div>
-                <div className={styles.statLabel}>Money</div>
-                <div className={styles.statValue} id="Money">
-                  {formatNumber(stats?.Money)}
+                <div className={styles.statLabel}>Petrol</div>
+                <div className={styles.statValue} id="Petrol">
+                  {formatNumber(stats?.Petrol > 0 ? stats?.Petrol : 0)}
                 </div>
               </div>
             </div>
             <div className={styles.timeControl}>
-              <button className={styles.timeButton} id="timeRewind">
+              <button
+                className={styles.timeButton}
+                id="timeRewind"
+                onClick={() => sendMessage('Canvas', 'Slowdown')}
+              >
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
@@ -210,7 +214,7 @@ export function UnityContainer() {
                         InitialPopulation: parseInt(data.PeopleCount),
 
                         /** Cars per person (between 0 and 1). Each car consumes 1 unit of Petrol per day. */
-                        CarPerPeople: parseInt(data.CarPerPeople),
+                        CarPerPeople: parseInt(data.CarPerPeople) / 100,
 
                         /** Birth rate (between 0 and 1). */
                         BirthRate: parseInt(data.BirthRate) / 10000,
@@ -308,7 +312,11 @@ export function UnityContainer() {
                   </svg>
                 )}
               </button>
-              <button className={styles.timeButton} id="timeFastForward">
+              <button
+                className={styles.timeButton}
+                id="timeFastForward"
+                onClick={() => sendMessage('Canvas', 'FastForward')}
+              >
                 <svg
                   stroke="currentColor"
                   fill="currentColor"

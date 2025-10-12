@@ -102,6 +102,8 @@
   padding: 5px 5px;
   padding-top: 6px;
   font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
   margin-right: 20px;
   transition: width 0.2s !important;
 }

@@ -27,6 +27,13 @@ export default function MinimalLandingPage() {
           <Link href="/project/new" className={styles.ctaButton}>
             Start a new project
           </Link>
+          <Link
+            href="https://youtu.be/auSkS7mcm9Y"
+            className={styles.ctaButton}
+            target="_blank"
+          >
+            Demo video
+          </Link>
         </section>
 
         <section id="features" className={styles.features}>

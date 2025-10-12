@@ -48,6 +48,7 @@
   color: #1a1a1a; /* Dark text on bright button for contrast */
   text-decoration: none;
   border-radius: 5px;
+  margin-bottom: 20px;
   font-weight: 600;
   transition: background-color 0.3s, transform 0.1s;
   box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4); /* Glow effect for button */

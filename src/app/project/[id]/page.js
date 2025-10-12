@@ -194,7 +194,7 @@ export default function UnityPage({ params }) {
                     disabled={playing}
                     type="number"
                     id="Coal"
-                    defaultValue="50000"
+                    defaultValue="500000"
                     value
                   />
                 </div>
@@ -204,7 +204,7 @@ export default function UnityPage({ params }) {
                     disabled={playing}
                     type="number"
                     id="Petrol"
-                    defaultValue="1000000"
+                    defaultValue="50000000"
                   />
                 </div>
               </div>
