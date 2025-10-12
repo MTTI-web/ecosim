@@ -45,22 +45,27 @@
 
 .profilePhotoContainer {
   margin-bottom: 2rem;
-}
 
-.profilePhoto {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* Make it round */
-  object-fit: cover;
+}
+
+.profilePhotoContainer svg {
+  height: 100%;
+  width: 100%;
 }
 
 .profileInfo {
   width: 100%;
   text-align: left;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .infoLabel {
   font-size: 0.9rem;
+  width: 100%;
   color: #999;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
@@ -70,6 +75,7 @@
 
 .infoValue {
   font-size: 1.3rem;
+  width: 100%;
   color: #e0e0e0;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;

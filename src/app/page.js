@@ -6,7 +6,7 @@ export default function MinimalLandingPage() {
   return (
     <>
       <Head>
-        <title>Simuopolis: The Ultimate City Simulator</title>
+        <title>EcoSim: The Ultimate City Simulator</title>
         <meta
           name="description"
           content="Design, simulate, and observe your perfect (or imperfect) city. Control every factor."
@@ -21,8 +21,8 @@ export default function MinimalLandingPage() {
             Observe the Results.
           </h1>
           <p className={styles.heroSubtitle}>
-            Simuopolis is the ultimate city simulator where every decision, from
-            tax rate to energy policy.
+            EcoSim is the ultimate city simulator where every decision, from tax
+            rate to energy policy.
           </p>
           <Link href="/project/new" className={styles.ctaButton}>
             Start a new project

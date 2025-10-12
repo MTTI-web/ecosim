@@ -1,7 +1,7 @@
 /* --- Root Variables for Dark Theme --- */
 :root {
   --color-background-dark: #1e1e1e; /* Main page background */
-  --color-surface-dark: #2a2a2e; /* Card and main element background */
+  --color-surface-dark: #252525; /* Card and main element background */
   --color-text-light: #f0f0f0; /* Primary text color */
   --color-text-secondary: #aaaaaa; /* Secondary text/metadata color */
   --color-accent-blue: #007bff; /* Button/Accent color (New Project) */
@@ -84,19 +84,17 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle dark shadow */
   border: 1px solid var(--color-border-dark);
-  transition: transform 0.2s, border-color 0.2s;
+  transition: background-color 0.1s;
   cursor: pointer;
   position: relative;
 }
 
 .projectCard:hover {
-  border-color: var(--color-accent-blue); /* Highlight border on hover */
-  background-color: #333347;
+  background-color: #2e2e2e;
 }
 
 .projectTitle {
   font-size: 1.4em;
-  margin-top: 15px; /* Space from status tag */
   margin-bottom: 10px;
   line-height: 1.3;
 }
